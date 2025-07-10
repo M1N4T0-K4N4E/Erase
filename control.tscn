@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://dk7s4hdgsy6um"]
+[gd_scene load_steps=2 format=3 uid="uid://dk7s4hdgsy6um"]
 
-[node name="Control" type="Control"]
+[sub_resource type="ImageTexture" id="ImageTexture_uchyk"]
+
+[node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,7 +10,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="startbtn" type="Button" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 657.0
+offset_top = 221.0
+offset_right = 750.0
+offset_bottom = 252.0
+scale = Vector2(3.73932, 4.64928)
+text = "New Game"
+icon = SubResource("ImageTexture_uchyk")
+metadata/_edit_use_anchors_ = true
