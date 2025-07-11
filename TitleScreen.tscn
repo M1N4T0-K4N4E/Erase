@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk7s4hdgsy6um"]
+
+[ext_resource type="Texture2D" uid="uid://bvagr1rhjvnt2" path="res://Asset/Desktop - 1.png" id="1_0fbet"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_0fbet")
+
+[node name="startbtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.385938
+anchor_top = 0.377778
+anchor_right = 0.385938
+anchor_bottom = 0.377778
+offset_left = 34.9998
+offset_top = -36.0001
+offset_right = 400.0
+offset_bottom = 88.9999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="startbtn2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.385938
+anchor_top = 0.377778
+anchor_right = 0.385938
+anchor_bottom = 0.377778
+offset_left = 34.9999
+offset_top = 137.0
+offset_right = 400.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="startbtn3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.096
+anchor_top = -1.119
+anchor_right = -0.096
+anchor_bottom = -1.119
+offset_left = 960.32
+offset_top = 1926.52
+offset_right = 1325.32
+offset_bottom = 2051.52
+grow_horizontal = 2
+grow_vertical = 2
