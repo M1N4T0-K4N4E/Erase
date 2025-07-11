@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk7s4hdgsy6um"]
+[gd_scene load_steps=3 format=3 uid="uid://dk7s4hdgsy6um"]
 
 [ext_resource type="Texture2D" uid="uid://bvagr1rhjvnt2" path="res://Asset/Desktop - 1.png" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://t5r30pglrj7e" path="res://Script/title_screen.gd" id="1_pkhjh"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pkhjh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -30,7 +32,7 @@ offset_bottom = 88.9999
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="startbtn2" type="Button" parent="."]
+[node name="loadbtn" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.385938
@@ -44,7 +46,7 @@ offset_bottom = 262.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="startbtn3" type="Button" parent="."]
+[node name="quitbtn" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.096
@@ -57,3 +59,6 @@ offset_right = 1325.32
 offset_bottom = 2051.52
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="pressed" from="startbtn" to="." method="_on_startbtn_pressed"]
+[connection signal="pressed" from="quitbtn" to="." method="_on_quitbtn_pressed"]
