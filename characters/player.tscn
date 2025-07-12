@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv06wgkuw2ntt"]
+
+[ext_resource type="Script" uid="uid://b1iunh2dfvi63" path="res://Script/player_body.gd" id="1_tory2"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_tory2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3426n"]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_tory2")
+
+[node name="player" parent="." instance=ExtResource("2_tory2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-3.43324, 3.43562)
+shape = SubResource("CircleShape2D_3426n")

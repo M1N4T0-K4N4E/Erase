@@ -1,33 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dngeabb6p52qy"]
+[gd_scene load_steps=2 format=4 uid="uid://dngeabb6p52qy"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ghqvi"]
 _data = PackedByteArray("AAADAAUAAAABAAAAGQAAAGQAAADOAAAAUklGRsYAAABXRUJQVlA4TLoAAAAvGMAYEDegkG0EaGL3+OscwGkoBIAASSF/ioQiOQVpGzB1NYkz/eY/AAD/W6QKeUyD40iSpGbwYGsJ+N9/AhfGAV0G3P77sNBckt4R/Z8A+7UBJRAVpFDVCvV6VR2RiEqstPpw5aOUPqvdf0eUqj+nj1ItldL9IJ8tyu8VN4lTgeksgVsKmZkNOekwJsA4jjkkZgHA5oN7poDkvh5I7uuB5L4eSO77AJgLpyEvMgEEO91uhc1zK1BA+fE=")
 size_override = Vector2(25, 100)
-
-[sub_resource type="Animation" id="Animation_ghqvi"]
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("slash_effect:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.075, 0.15, 0.225),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3h16"]
-_data = {
-&"default": SubResource("Animation_ghqvi")
-}
-
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_8ykyu"]
-_data = PackedByteArray("AAADAAUAAAABAAAAZAAAAGQAAAAmAQAAUklGRh4BAABXRUJQVlA4TBEBAAAvY8AYEBcw//M///MfgAe4tbW3bX4F9E7/PhxB4f9RoHfCPhxBcUyHh8+pchPRfzZu2wZSJsEdhLtf2K+6G+YWiQUx5QLJBeJIdeIxiU3HiLli9gE12oLrCmW/8tB8kI11yCD7YHTJ2c6f+YL6Fj1SupEiQxXZHKoxg/+nDl8gdDZr+2e4G2aBhBNTMskUpC6IxyQ2HfXAdYfE7IZ1M9ZtXkd1nD2o4+yi1uVgwIi4cB3qhjVQJ9YNa164ridmo+alUt3cUQ8N665pYl28ZXOdmh1/ZXCTBzd5cJOHYvJQTB1uzNTBmLjWhcqlFYQfdkf4oT7klwZm9GnloatYvsrEo8wmXcW+QOhsUmbSsQf7/jMA")
-size_override = Vector2(100, 100)
 
 [node name="sword" type="Node2D"]
 
@@ -52,34 +27,3 @@ metadata/_aseprite_wizard_config_ = {
 "source_uid": 129430540717262589
 }
 metadata/_aseprite_wizard_source_file_hash_ = "d4156f547a192d3552ad50d32e932e0a"
-
-[node name="slash_animation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_b3h16")
-}
-
-[node name="slash_effect" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-29, -10)
-rotation = 1.46629
-texture = SubResource("PortableCompressedTexture2D_8ykyu")
-hframes = 2
-vframes = 2
-metadata/_aseprite_wizard_interface_config_ = {
-"pending_changes": {}
-}
-metadata/_aseprite_wizard_config_ = {
-"embed_tex": true,
-"i_mode": 0,
-"keep_anim_length": false,
-"layers": [],
-"o_ex_p": "",
-"o_folder": "",
-"o_name": "",
-"only_visible": false,
-"player": "slash_animation",
-"slice": "",
-"source": "res://sword/slashing.aseprite",
-"source_uid": 8087910661670418787
-}
-metadata/_aseprite_wizard_source_file_hash_ = "4f1c5e75299aad82a27c3bcfb374f21f"

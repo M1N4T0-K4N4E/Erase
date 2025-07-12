@@ -14,6 +14,7 @@ script = ExtResource("1_3426n")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
+color = Color(0.498039, 0.2, 0.2, 1)
 
 [node name="player" parent="." instance=ExtResource("3_tp3rm")]
 position = Vector2(1005, 620)
@@ -57,7 +58,108 @@ offset_bottom = 32.0
 scale = Vector2(3.05026, 1.89563)
 text = "x"
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HealthContainer" type="MarginContainer" parent="UI"]
+offset_right = 200.0
+offset_bottom = 50.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="HealthLabel" type="Label" parent="UI/HealthContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24
+text = "Health: 10/10"
+
 [node name="wall" type="StaticBody2D" parent="."]
+
+[node name="left4" type="StaticBody2D" parent="wall"]
+position = Vector2(1183, 1032)
+rotation = 1.5708
+
+[node name="wall2_" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 48)
+rotation = 1.5708
+
+[node name="wall2_2" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 143)
+rotation = 1.5708
+
+[node name="wall2_3" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 239)
+rotation = 1.5708
+
+[node name="wall2_4" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 334)
+rotation = 1.5708
+
+[node name="wall2_5" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 430)
+rotation = 1.5708
+
+[node name="wall2_6" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 525)
+rotation = 1.5708
+
+[node name="wall2_7" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 619)
+rotation = 1.5708
+
+[node name="wall2_8" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 714)
+rotation = 1.5708
+
+[node name="wall2_9" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 809)
+rotation = 1.5708
+
+[node name="wall2_10" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 904)
+rotation = 1.5708
+
+[node name="wall2_11" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 1000)
+rotation = 1.5708
+
+[node name="wall2_12" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 1095)
+rotation = 1.5708
+
+[node name="wall2_16" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -711)
+rotation = 1.5708
+
+[node name="wall2_17" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -616)
+rotation = 1.5708
+
+[node name="wall2_18" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -522)
+rotation = 1.5708
+
+[node name="wall2_19" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -427)
+rotation = 1.5708
+
+[node name="wall2_20" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -332)
+rotation = 1.5708
+
+[node name="wall2_21" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -237)
+rotation = 1.5708
+
+[node name="wall2_22" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -141)
+rotation = 1.5708
+
+[node name="wall2_23" parent="wall/left4" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -46)
+rotation = 1.5708
 
 [node name="left" type="StaticBody2D" parent="wall"]
 
@@ -160,6 +262,88 @@ rotation = 1.5708
 position = Vector2(24, 1095)
 rotation = 1.5708
 
-[node name="Top" type="StaticBody2D" parent="wall"]
+[node name="left3" type="StaticBody2D" parent="wall"]
+position = Vector2(1188, 0)
+rotation = 1.5708
+
+[node name="wall2_" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 48)
+rotation = 1.5708
+
+[node name="wall2_2" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 143)
+rotation = 1.5708
+
+[node name="wall2_3" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 239)
+rotation = 1.5708
+
+[node name="wall2_4" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 334)
+rotation = 1.5708
+
+[node name="wall2_5" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 430)
+rotation = 1.5708
+
+[node name="wall2_6" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 525)
+rotation = 1.5708
+
+[node name="wall2_7" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 619)
+rotation = 1.5708
+
+[node name="wall2_8" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 714)
+rotation = 1.5708
+
+[node name="wall2_9" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 809)
+rotation = 1.5708
+
+[node name="wall2_10" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 904)
+rotation = 1.5708
+
+[node name="wall2_11" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 1000)
+rotation = 1.5708
+
+[node name="wall2_12" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, 1095)
+rotation = 1.5708
+
+[node name="wall2_16" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -711)
+rotation = 1.5708
+
+[node name="wall2_17" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -616)
+rotation = 1.5708
+
+[node name="wall2_18" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -522)
+rotation = 1.5708
+
+[node name="wall2_19" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -427)
+rotation = 1.5708
+
+[node name="wall2_20" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -332)
+rotation = 1.5708
+
+[node name="wall2_21" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -237)
+rotation = 1.5708
+
+[node name="wall2_22" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -141)
+rotation = 1.5708
+
+[node name="wall2_23" parent="wall/left3" instance=ExtResource("5_ln5sc")]
+position = Vector2(24, -46)
+rotation = 1.5708
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
