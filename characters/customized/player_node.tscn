@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://cwk687cdxrfc5"]
+[gd_scene load_steps=7 format=4 uid="uid://cwk687cdxrfc5"]
 
 [ext_resource type="Script" uid="uid://bcn211r3eufh3" path="res://Script/player_node.gd" id="1_g8aq8"]
+[ext_resource type="PackedScene" uid="uid://dngeabb6p52qy" path="res://sword/sword.tscn" id="2_sword"]
 
 [sub_resource type="Animation" id="Animation_5rtqg"]
 length = 0.17
@@ -78,3 +79,7 @@ metadata/_aseprite_wizard_config_ = {
 "source_uid": 2218123420954002436
 }
 metadata/_aseprite_wizard_source_file_hash_ = "462c3a7a26d4bcec108c73cb07d0d75a"
+
+[node name="Sword" parent="." instance=ExtResource("2_sword")]
+position = Vector2(25, -10)
+scale = Vector2(0.8, 0.8)
