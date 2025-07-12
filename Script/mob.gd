@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
-var player = get_node(/root/InGameScreen/)
+var player
+
+func _ready() -> void:
+	player = get_node("../player")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)

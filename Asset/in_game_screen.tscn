@@ -13,15 +13,15 @@ script = ExtResource("1_3426n")
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_2h7vx")]
-position = Vector2(973, 539)
-
 [node name="Button" type="Button" parent="."]
 offset_left = 1868.0
 offset_right = 1885.0
 offset_bottom = 31.0
 scale = Vector2(3.05026, 1.89563)
 text = "x"
+
+[node name="player" parent="." instance=ExtResource("1_2h7vx")]
+position = Vector2(990, 540)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_ds6o6")]
 position = Vector2(462, 499)
