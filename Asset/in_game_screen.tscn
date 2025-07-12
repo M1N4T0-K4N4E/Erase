@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://pcth28bi0v6s" path="res://trees/pine_tree.tscn" id="3_ds6o6"]
 [ext_resource type="PackedScene" uid="uid://dmmyrrf2agvpe" path="res://characters/customized/player.tscn" id="3_tp3rm"]
 [ext_resource type="PackedScene" uid="uid://cb8fd3ndtr8qx" path="res://characters/slime/mob_test.tscn" id="4_s8dgf"]
-[ext_resource type="PackedScene" path="res://characters/customized/monster.tscn" id="4_vclyg"]
+[ext_resource type="PackedScene" uid="uid://dq70mwnp7bi30" path="res://characters/customized/monster.tscn" id="4_vclyg"]
 [ext_resource type="PackedScene" uid="uid://m7o02xham3yy" path="res://Asset/wall_2_.tscn" id="5_ln5sc"]
 
 [node name="InGameScreen" type="Node2D"]
@@ -36,19 +36,19 @@ position = Vector2(1526, 668)
 
 [node name="chromastone" parent="." instance=ExtResource("4_vclyg")]
 z_index = 6
-position = Vector2(773, 240)
+position = Vector2(1663, 351)
 
 [node name="Mob_test" parent="." instance=ExtResource("4_s8dgf")]
-position = Vector2(944, 824)
+position = Vector2(142, 984)
 
 [node name="Mob_test2" parent="." instance=ExtResource("4_s8dgf")]
-position = Vector2(1228, 955)
+position = Vector2(1773, 984)
 
 [node name="Mob_test3" parent="." instance=ExtResource("4_s8dgf")]
-position = Vector2(1382, 487)
+position = Vector2(1759, 173)
 
 [node name="Mob_test4" parent="." instance=ExtResource("4_s8dgf")]
-position = Vector2(1209, 766)
+position = Vector2(137, 166)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1867.0

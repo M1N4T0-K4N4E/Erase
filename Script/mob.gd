@@ -19,6 +19,11 @@ func _physics_process(delta):
 	velocity = direction * 200.0
 	move_and_slide()
 	
+	if velocity.length() > 0.0:
+		get_node("Slime").play_walk()
+	else :
+		get_node("Slime").play_idle()
+	
 	# Check for collision with player
 	check_player_collision()
 
@@ -42,6 +47,7 @@ func _on_attack_cooldown_finished():
 	can_damage_player = true
 
 func take_damage(amount: int = 1):
+	get_node("Slime").play_hurt()
 	health -= amount
 	if health <= 0:
 		die()
