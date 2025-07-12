@@ -61,4 +61,5 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="startbtn" to="." method="_on_startbtn_pressed"]
+[connection signal="pressed" from="loadbtn" to="." method="_on_loadbtn_pressed"]
 [connection signal="pressed" from="quitbtn" to="." method="_on_quitbtn_pressed"]

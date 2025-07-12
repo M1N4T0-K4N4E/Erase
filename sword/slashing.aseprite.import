@@ -2,7 +2,11 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
+<<<<<<< HEAD
+uid="uid://73m1s65kcypk"
+=======
 uid="uid://bwvtyfgh3er1d"
+>>>>>>> 43e56d05b7e34e28f4cb894ea6a03846e2fccf5e
 path="res://.godot/imported/slashing.aseprite-d61483bcfe5b9ad4ddf24756666762f2.res"
 
 [deps]
