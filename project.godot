@@ -94,6 +94,10 @@ project/assembly_name="Getting started with Godot 4"
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/colorpicker_presets/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://dhf2w4g60556d"
+
 [input]
 
 move_left={
@@ -133,4 +137,5 @@ shoot={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"

@@ -18,48 +18,33 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_0fbet")
 
-[node name="startbtn" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.385938
-anchor_top = 0.377778
-anchor_right = 0.385938
-anchor_bottom = 0.377778
-offset_left = 34.9998
-offset_top = -36.0001
-offset_right = 400.0
-offset_bottom = 88.9999
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 57.0
+offset_right = 219.0
+offset_bottom = 80.0
+scale = Vector2(13.3739, 11.5949)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ERASE"
 
-[node name="loadbtn" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.385938
-anchor_top = 0.377778
-anchor_right = 0.385938
-anchor_bottom = 0.377778
-offset_left = 34.9999
-offset_top = 137.0
-offset_right = 400.0
-offset_bottom = 262.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 350.0
+offset_right = 864.0
+offset_bottom = 417.0
+scale = Vector2(4.68455, 4.39654)
+theme_override_constants/separation = 5
+alignment = 1
 
-[node name="quitbtn" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.096
-anchor_top = -1.119
-anchor_right = -0.096
-anchor_bottom = -1.119
-offset_left = 960.32
-offset_top = 1926.52
-offset_right = 1325.32
-offset_bottom = 2051.52
-grow_horizontal = 2
-grow_vertical = 2
+[node name="startbtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
 
-[connection signal="pressed" from="startbtn" to="." method="_on_startbtn_pressed"]
-[connection signal="pressed" from="loadbtn" to="." method="_on_loadbtn_pressed"]
-[connection signal="pressed" from="quitbtn" to="." method="_on_quitbtn_pressed"]
+[node name="quitbtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/startbtn" to="." method="_on_startbtn_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitbtn" to="." method="_on_quitbtn_pressed"]
