@@ -11,6 +11,7 @@ var spawn_count = 5  # Number of mobs to spawn each wave
 var spawn_area_min = Vector2(100, 100)  # Minimum spawn coordinates
 var spawn_area_max = Vector2(1800, 980)  # Maximum spawn coordinates (screen boundaries)
 var current_wave = 1
+var is_spawning_wave = false  # Prevent continuous spawning
 
 # UI elements
 var notice_screen: Control
@@ -40,8 +41,8 @@ func _process(_delta):
 	# Update health display continuously
 	update_health_display()
 	
-	# Check if all mobs are dead
-	if get_tree().get_nodes_in_group("mobs").size() == 0:
+	# Check if all mobs are dead and we're not already spawning
+	if get_tree().get_nodes_in_group("mobs").size() == 0 and not is_spawning_wave:
 		spawn_new_wave()
 
 func create_notice_screen():
@@ -73,6 +74,10 @@ func create_notice_screen():
 		add_child(notice_screen)
 
 func spawn_new_wave():
+	if is_spawning_wave:  # Already spawning, don't spawn again
+		return
+		
+	is_spawning_wave = true
 	print("All mobs defeated! Spawning wave ", current_wave)
 	
 	# Show wave notice
@@ -90,6 +95,9 @@ func spawn_new_wave():
 	
 	current_wave += 1
 	print("Wave ", current_wave - 1, " spawned with ", mobs_to_spawn, " mobs")
+	
+	# Reset the spawning flag
+	is_spawning_wave = false
 
 func spawn_mob_at_random_position():
 	var mob_instance = MobScene.instantiate()

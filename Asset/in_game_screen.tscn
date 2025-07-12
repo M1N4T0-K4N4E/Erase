@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://pcth28bi0v6s" path="res://trees/pine_tree.tscn" id="3_ds6o6"]
 [ext_resource type="PackedScene" uid="uid://dmmyrrf2agvpe" path="res://characters/customized/player.tscn" id="3_tp3rm"]
 [ext_resource type="PackedScene" uid="uid://cb8fd3ndtr8qx" path="res://characters/slime/mob_test.tscn" id="4_s8dgf"]
-[ext_resource type="PackedScene" uid="uid://dq70mwnp7bi30" path="res://characters/customized/monster.tscn" id="4_vclyg"]
+[ext_resource type="PackedScene" path="res://characters/customized/monster.tscn" id="4_vclyg"]
 [ext_resource type="PackedScene" uid="uid://m7o02xham3yy" path="res://Asset/wall_2_.tscn" id="5_ln5sc"]
 
 [node name="InGameScreen" type="Node2D"]
