@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://dag5t1tspq3b4"]
+[gd_scene load_steps=9 format=4 uid="uid://dag5t1tspq3b4"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_i1ux2"]
 _data = PackedByteArray("AAADAAUAAAABAAAAUAAAACgAAADQAAAAUklGRsgAAABXRUJQVlA4TLsAAAAvT8AJECcgJCBTRqiGEAgQdoyJViOmIVNuZcz8BwB4S3kAOZLkuNGMB1MAHMB4oIAFiID/Tt3Ans+I/k+A/CubfjMGj9DSK8d1A2o7nFiz2jivSwC1tpZSai215bSRA1SABJAY1z3LHmpbTD6mLhhDd+f8qPTR3UNZjD79lAJyLef8KfESQD7Had0TUVHZNmQPwdibrwF6CdwdA+RKJIfsjty1EvEAoLciHlC5b3hA5YUcUHkiIG8a8j8JAA==")
 size_override = Vector2(80, 40)
 
 [sub_resource type="Animation" id="Animation_i1ux2"]
-length = 0.1
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -14,20 +14,88 @@ tracks/0/path = NodePath("fire:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_offvn"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_lr7rw"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_2y00n"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [5, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_03fv8"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_offvn"]
 _data = {
-&"default": SubResource("Animation_i1ux2")
+&"fire_1": SubResource("Animation_i1ux2"),
+&"fire_2": SubResource("Animation_offvn"),
+&"fire_3": SubResource("Animation_lr7rw"),
+&"fire_4": SubResource("Animation_2y00n"),
+&"fire_5": SubResource("Animation_03fv8")
 }
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_lr7rw"]
-_data = PackedByteArray("AAADAAUAAAABAAAAMgAAADIAAAAYAQAAUklGRhABAABXRUJQVlA4TAMBAAAvMUAMEC+gkI0kaF9/mTU7gNNQ0LYN08cfQaHuKGrbiCmacd/NH9nNfwDw/29OQ0JYEyA3kiQ3GvAwYEAHiAb4l1BLAwSN/mf574umiK69/hH9Z+C2bSPmuufd/aL82xhsEa41hp8v/fHhv6xZB2eNuyhCUwzGGklW6ab1kKw1Thqlz0knyBodzUXoitzqpfuOzxonkTu2kFMNL0b/bq4h/4n33uB2SCEhSBLkYe2BtG+t4UUj3TP68dS1Vly5sRhftWvkbDnXy/tGGnq09ubsqZdmq6myY8Ei3hkCgG/piw37xxlLayw5ifbOAV/ycM6c8KIJICmLci9KAGPaoJpRfjkKAA==")
-size_override = Vector2(50, 50)
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_u2k11"]
+_data = PackedByteArray("AAADAAUAAAABAAAAlgAAAJYAAADWAwAAUklGRs4DAABXRUJQVlA4TMIDAAAvlUAlEC+gkI0kaF9/mTU7gNNQ0LYN08cfQaHuKGrbiCmacd/NH9nNfwDw/29OQ0JYEyS3tl23FRGCBQhqIPjNaZywAMP0XIB0+u9FvDSPzZv3mUX0H4IjuWGbZWmGkhUs1bwi/PPFmyM+Pvzw/vH2Z6qe9t/+tc68v/k44+fQx4fN2XS3YNJJ9ZPvXTo54yOjWfORGeaM3Z1Pq/aEB97F3JhktqTqFJxnxHw5ZMH3h5TkM1Bn50c7IYEofm7D6Yzy462jAOLULcTJCvjd5YcJw2aBVA0UJwPZne0wQh1RJwnca8XOUT4LVbYRo5HveDW3ZcGN35RuD40dUq9tbwWNSqYhNmv7qJMULsv1uJNDSuPWPupQoEWtB5MEfk6STtJYrlWhC47g8yxPsPNVj1CwYjUc46H7+jqM6It5nAJrOyxQLLcnSGFIOblgrZVB5CCDSlAwUQ8Z6iQB4Kf7qWlCu/Kv0GvI2NmhCUlTb3IGY2kucQgg319nI7HTBBBVoSASJDK7oSEIyWym/jNHdESGI6A+oiMyzDkffYY+Xo4v7xH18eCKp07L6D2eqlmczNqqO9BBlEGUZxaFMtrML+bs9Nl0nydmy4DaZ9lnSv8s2UGfYdbblt7HJ/o4pKsQvtVUxSijHxcYDt1VbWYYsShW5doRz8XhYNFgFEdG0YJoE2MhuxAfkWGvr6+CkCEDglCGGfkxD3tESajLMbaGAX1vHAQQbYogPmQrJxlGMiNKQi1HQg+uKeNhkgXp/FYjCQyFTDU5FGqYOmJnALoqCZ2TKaaWc39MgnlXMS1n31IxzTifo32y4OxwkiEIpYjYcizUQMSwkpa2Jggx2yvXhFodcK8VO9vEgCRkUxQa31KHrZJQGef2eLYRt2XBjWU/z2hCLCGopgVxREGjkgWyUAq6aVC4LNfjzl0X4iuFWtR6MHkRWq7VkdDiQCgUrFgNx3wh4gxPQmv7JbgQKicXrLUyeBAyUQ8PQsCPMWKaL5Sx040QQNLclQehnSaAOF8o05IQZgj9j0SOjoArPPX42+1k/B2/NTrayfDSO3rrUc3RT58xnwc94GDHz5EMszV/LZq+34KH97t1hPnYrbY2m359fm4FfT99jSxIoa9hOjuzWTzXPFBiewOz69YaonHm9EqCrQfidO61Yiezg9x62tp8bsuCG1kQ51PQqO2wDy7L9biTLmhR68HkheVaHbE4IBSsWA3HfIgzPLG2wy4oJxestTJ4wEQ9PAD8mD+m+WTsdANA0hzywE4TQHTQ0JIQ/koRAA==")
+size_override = Vector2(150, 150)
 
 [node name="shotgun" type="Node2D"]
 
@@ -60,7 +128,12 @@ libraries = {
 
 [node name="fire" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_lr7rw")
+position = Vector2(60, -7)
+rotation = 0.683583
+texture = SubResource("PortableCompressedTexture2D_u2k11")
+hframes = 3
+vframes = 3
+frame = 6
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -78,4 +151,4 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://shotgun/shotgun_effect.aseprite",
 "source_uid": 6421917608697449344
 }
-metadata/_aseprite_wizard_source_file_hash_ = "564d47ee468b2293d4c584cc62cc3449"
+metadata/_aseprite_wizard_source_file_hash_ = "0125bb2f0e0f71355c407a0834ad5a62"
