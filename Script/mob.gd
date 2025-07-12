@@ -47,8 +47,9 @@ func _on_attack_cooldown_finished():
 	can_damage_player = true
 
 func take_damage(amount: int = 1):
-	get_node("Slime").play_hurt()
 	health -= amount
+	print("i cant play animation")
+	get_node("Slime").play_hurt()
 	if health <= 0:
 		die()
 

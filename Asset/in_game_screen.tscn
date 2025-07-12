@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://pcth28bi0v6s" path="res://trees/pine_tree.tscn" id="3_ds6o6"]
 [ext_resource type="PackedScene" uid="uid://dmmyrrf2agvpe" path="res://characters/customized/player.tscn" id="3_tp3rm"]
 [ext_resource type="PackedScene" uid="uid://cb8fd3ndtr8qx" path="res://characters/slime/mob_test.tscn" id="4_s8dgf"]
-[ext_resource type="PackedScene" uid="uid://dq70mwnp7bi30" path="res://characters/customized/monster.tscn" id="4_vclyg"]
+[ext_resource type="PackedScene" uid="uid://bfnqw2wherb1t" path="res://characters/customized/monster.tscn" id="4_vclyg"]
 [ext_resource type="PackedScene" uid="uid://m7o02xham3yy" path="res://Asset/wall_2_.tscn" id="5_ln5sc"]
 
 [node name="InGameScreen" type="Node2D"]
@@ -39,7 +39,7 @@ z_index = 6
 position = Vector2(1663, 351)
 
 [node name="Mob_test" parent="." instance=ExtResource("4_s8dgf")]
-position = Vector2(142, 984)
+position = Vector2(134, 984)
 
 [node name="Mob_test2" parent="." instance=ExtResource("4_s8dgf")]
 position = Vector2(1773, 984)
@@ -51,12 +51,13 @@ position = Vector2(1759, 173)
 position = Vector2(137, 166)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 1867.0
-offset_top = 1.0
-offset_right = 1884.0
-offset_bottom = 32.0
-scale = Vector2(3.05026, 1.89563)
-text = "x"
+z_index = 8
+offset_left = 1870.0
+offset_right = 1899.0
+offset_bottom = 55.0
+scale = Vector2(1.71667, 1.29873)
+theme_override_font_sizes/font_size = 41
+text = "X"
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -74,6 +75,17 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 24
 text = "Health: 10/10"
+
+[node name="Label" type="Label" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_right = 63.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 41
+text = "Wave 1"
 
 [node name="wall" type="StaticBody2D" parent="."]
 

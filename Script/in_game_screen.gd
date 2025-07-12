@@ -59,7 +59,7 @@ func create_notice_screen():
 	
 	# Wave label
 	wave_label = Label.new()
-	wave_label.text = "Wave 1 Incoming!"
+	wave_label.text = "Wave 1 Cleared!"
 	wave_label.add_theme_font_size_override("font_size", 48)
 	wave_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	wave_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -124,7 +124,7 @@ func spawn_mob_at_random_position():
 
 func show_wave_notice():
 	if notice_screen and wave_label:
-		wave_label.text = "Wave " + str(current_wave) + " Incoming!"
+		wave_label.text = "Wave " + str(current_wave+1) + " Incoming!"
 		notice_screen.visible = true
 		
 		# Hide notice after 2 seconds
