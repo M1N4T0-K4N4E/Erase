@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://pr36n5q5mt46"]
 
-[ext_resource type="Script" uid="uid://bcn211r3eufh3" path="res://Script/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bcn211r3eufh3" path="res://Script/player_node.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gii0h"]

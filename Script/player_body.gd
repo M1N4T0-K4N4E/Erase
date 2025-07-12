@@ -6,6 +6,6 @@ func _physics_process(delta: float):
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
-		get_node("HappyBoo").play_walk_animation()
+		get_node("player").play_walk_animation()
 	else :
-		get_node("HappyBoo").play_idle_animation()
+		get_node("player").play_idle_animation()
