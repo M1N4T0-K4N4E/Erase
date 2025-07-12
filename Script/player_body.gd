@@ -61,7 +61,6 @@ func _on_attack_cooldown_finished():
 
 func take_damage(amount: int = 1):
 	if not can_take_damage:
-		print("Player damage blocked by cooldown")
 		return
 		
 	current_health -= amount
@@ -98,4 +97,4 @@ func flash_player():
 func die():
 	print("Player died!")
 	# Add death logic here (restart level, game over screen, etc.)
-	get_tree().reload_current_scene()  # Simple restart for now
+	get_tree().change_scene_to_file("TitleScreen.tscn")
