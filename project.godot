@@ -74,8 +74,8 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="Your First 2D Game With Godot 4: START (GDQuest)"
-run/main_scene="uid://byy2iemyrstap"
+config/name="ERASE Game Project"
+run/main_scene="uid://dk7s4hdgsy6um"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.png"
 
