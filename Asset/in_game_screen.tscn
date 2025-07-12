@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://byy2iemyrstap"]
+[gd_scene load_steps=7 format=3 uid="uid://byy2iemyrstap"]
 
 [ext_resource type="Script" uid="uid://v7pq7sf8oylo" path="res://Script/in_game_screen.gd" id="1_3426n"]
 [ext_resource type="PackedScene" uid="uid://pcth28bi0v6s" path="res://trees/pine_tree.tscn" id="3_ds6o6"]
 [ext_resource type="PackedScene" uid="uid://dmmyrrf2agvpe" path="res://characters/customized/player.tscn" id="3_tp3rm"]
-[ext_resource type="PackedScene" uid="uid://bdtnk8f7sy8u3" path="res://characters/slime/mob_test.tscn" id="4_s8dgf"]
+[ext_resource type="PackedScene" uid="uid://cb8fd3ndtr8qx" path="res://characters/slime/mob_test.tscn" id="4_s8dgf"]
+[ext_resource type="PackedScene" uid="uid://dq70mwnp7bi30" path="res://characters/customized/monster.tscn" id="4_vclyg"]
 [ext_resource type="PackedScene" uid="uid://m7o02xham3yy" path="res://Asset/wall_2_.tscn" id="5_ln5sc"]
 
 [node name="InGameScreen" type="Node2D"]
@@ -15,7 +16,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="player" parent="." instance=ExtResource("3_tp3rm")]
-position = Vector2(990, 540)
+position = Vector2(1005, 620)
 
 [node name="tree" parent="." instance=ExtResource("3_ds6o6")]
 position = Vector2(462, 499)
@@ -32,8 +33,12 @@ position = Vector2(360, 961)
 [node name="tree5" parent="." instance=ExtResource("3_ds6o6")]
 position = Vector2(1526, 668)
 
+[node name="chromastone" parent="." instance=ExtResource("4_vclyg")]
+z_index = 6
+position = Vector2(773, 240)
+
 [node name="Mob_test" parent="." instance=ExtResource("4_s8dgf")]
-position = Vector2(1004, 806)
+position = Vector2(944, 824)
 
 [node name="Mob_test2" parent="." instance=ExtResource("4_s8dgf")]
 position = Vector2(1228, 955)
