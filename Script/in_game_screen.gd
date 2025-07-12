@@ -130,3 +130,6 @@ func show_wave_notice():
 		# Hide notice after 2 seconds
 		await get_tree().create_timer(2.0).timeout
 		notice_screen.visible = false
+
+func get_current_wave():
+	return current_wave
