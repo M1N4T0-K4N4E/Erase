@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=4 uid="uid://dag5t1tspq3b4"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_i1ux2"]
+_data = PackedByteArray("AAADAAUAAAABAAAAUAAAACgAAADQAAAAUklGRsgAAABXRUJQVlA4TLsAAAAvT8AJECcgJCBTRqiGEAgQdoyJViOmIVNuZcz8BwB4S3kAOZLkuNGMB1MAHMB4oIAFiID/Tt3Ans+I/k+A/CubfjMGj9DSK8d1A2o7nFiz2jivSwC1tpZSai215bSRA1SABJAY1z3LHmpbTD6mLhhDd+f8qPTR3UNZjD79lAJyLef8KfESQD7Had0TUVHZNmQPwdibrwF6CdwdA+RKJIfsjty1EvEAoLciHlC5b3hA5YUcUHkiIG8a8j8JAA==")
+size_override = Vector2(80, 40)
+
+[sub_resource type="Animation" id="Animation_i1ux2"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_offvn"]
+_data = {
+&"default": SubResource("Animation_i1ux2")
+}
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_lr7rw"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMgAAADIAAAAYAQAAUklGRhABAABXRUJQVlA4TAMBAAAvMUAMEC+gkI0kaF9/mTU7gNNQ0LYN08cfQaHuKGrbiCmacd/NH9nNfwDw/29OQ0JYEyA3kiQ3GvAwYEAHiAb4l1BLAwSN/mf574umiK69/hH9Z+C2bSPmuufd/aL82xhsEa41hp8v/fHhv6xZB2eNuyhCUwzGGklW6ab1kKw1Thqlz0knyBodzUXoitzqpfuOzxonkTu2kFMNL0b/bq4h/4n33uB2SCEhSBLkYe2BtG+t4UUj3TP68dS1Vly5sRhftWvkbDnXy/tGGnq09ubsqZdmq6myY8Ei3hkCgG/piw37xxlLayw5ifbOAV/ycM6c8KIJICmLci9KAGPaoJpRfjkKAA==")
+size_override = Vector2(50, 50)
+
+[node name="shotgun" type="Node2D"]
+
+[node name="gun" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_i1ux2")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://shotgun/shotgun.aseprite",
+"source_uid": 8020334041384772953
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0d23f619dddd5b52a8432c1ea6026fef"
+
+[node name="fire_effect" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_offvn")
+}
+
+[node name="fire" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_lr7rw")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "fire_effect",
+"slice": "",
+"source": "res://shotgun/shotgun_effect.aseprite",
+"source_uid": 6421917608697449344
+}
+metadata/_aseprite_wizard_source_file_hash_ = "564d47ee468b2293d4c584cc62cc3449"
