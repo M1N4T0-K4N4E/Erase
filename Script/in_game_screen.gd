@@ -84,7 +84,7 @@ func spawn_new_wave():
 	show_wave_notice()
 	
 	# Wait a moment, then spawn mobs
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	
 	# Increase difficulty by spawning more mobs each wave
 	var mobs_to_spawn = spawn_count + (current_wave - 1) * 2  # +2 mobs per wave

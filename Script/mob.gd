@@ -32,7 +32,7 @@ func check_player_collision():
 		return
 		
 	var distance_to_player = global_position.distance_to(player.global_position)
-	var collision_distance = 100.0  # Adjust this based on your sprite sizes
+	var collision_distance = 90.0  # Adjust this based on your sprite sizes
 	
 	if distance_to_player <= collision_distance:
 		# Damage the player
