@@ -96,5 +96,89 @@ func flash_player():
 
 func die():
 	print("Player died!")
-	# Add death logic here (restart level, game over screen, etc.)
-	get_tree().change_scene_to_file("TitleScreen.tscn")
+	# Get the current wave from the game scene for high score
+	var game_scene = get_tree().current_scene
+	var final_wave = 1
+	if game_scene and game_scene.has_method("get_current_wave"):
+		final_wave = game_scene.get_current_wave()
+	
+	# Show game over screen with high score
+	show_game_over_screen(final_wave)
+
+func show_game_over_screen(final_wave: int):
+	# Pause the game
+	get_tree().paused = true
+	
+	# Create game over UI overlay
+	var game_over_screen = Control.new()
+	game_over_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	game_over_screen.process_mode = Node.PROCESS_MODE_WHEN_PAUSED  # Allow UI to work when paused
+	
+	# Blurred background effect
+	var background = ColorRect.new()
+	background.color = Color(0, 0, 0, 0.6)  # Darker semi-transparent overlay
+	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	game_over_screen.add_child(background)
+	
+	# Add blur effect by creating multiple overlapping semi-transparent layers
+	for i in range(3):
+		var blur_layer = ColorRect.new()
+		blur_layer.color = Color(0.1, 0.1, 0.1, 0.2)  # Multiple dark layers for blur effect
+		blur_layer.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		game_over_screen.add_child(blur_layer)
+	
+	# Main container for centering content
+	var container = VBoxContainer.new()
+	container.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	container.custom_minimum_size = Vector2(400, 300)
+	
+	# Game Over title
+	var title_label = Label.new()
+	title_label.text = "GAME OVER"
+	title_label.add_theme_font_size_override("font_size", 64)
+	title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title_label.add_theme_color_override("font_color", Color.RED)
+	container.add_child(title_label)
+	
+	# Add spacing
+	var spacer1 = Control.new()
+	spacer1.custom_minimum_size = Vector2(0, 40)
+	container.add_child(spacer1)
+	
+	# High score label
+	var score_label = Label.new()
+	score_label.text = "Waves Survived: " + str(final_wave - 1)
+	score_label.add_theme_font_size_override("font_size", 36)
+	score_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	score_label.add_theme_color_override("font_color", Color.YELLOW)
+	container.add_child(score_label)
+	
+	# Add spacing
+	var spacer2 = Control.new()
+	spacer2.custom_minimum_size = Vector2(0, 40)
+	container.add_child(spacer2)
+	
+	# Return to title button
+	var return_button = Button.new()
+	return_button.text = "Return to Title Screen"
+	return_button.custom_minimum_size = Vector2(300, 60)
+	return_button.add_theme_font_size_override("font_size", 24)
+	
+	# Center the button
+	var button_container = HBoxContainer.new()
+	button_container.alignment = BoxContainer.ALIGNMENT_CENTER
+	button_container.add_child(return_button)
+	container.add_child(button_container)
+	
+	game_over_screen.add_child(container)
+	
+	# Add to scene
+	get_tree().current_scene.add_child(game_over_screen)
+	
+	# Connect button signal
+	return_button.pressed.connect(_on_return_to_title_pressed)
+
+func _on_return_to_title_pressed():
+	# Unpause the game before changing scenes
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://TitleScreen.tscn")
