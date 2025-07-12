@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq70mwnp7bi30"]
+
+[ext_resource type="Script" uid="uid://cvgmxr6sk3axj" path="res://characters/customized/monster.gd" id="1_a1wrx"]
+[ext_resource type="PackedScene" uid="uid://g0ce85uh11y6" path="res://characters/customized/chromastone.tscn" id="1_wqn8h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wj8w5"]
+radius = 60.208
+
+[node name="chromastone" type="CharacterBody2D"]
+script = ExtResource("1_a1wrx")
+
+[node name="chroma" parent="." instance=ExtResource("1_wqn8h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 101)
+shape = SubResource("CircleShape2D_wj8w5")
