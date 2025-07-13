@@ -137,6 +137,8 @@ func show_game_over_screen(final_wave: int):
 	title_label.text = "GAME OVER"
 	title_label.add_theme_font_size_override("font_size", 64)
 	title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	title_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	title_label.add_theme_color_override("font_color", Color.RED)
 	container.add_child(title_label)
 	
@@ -150,6 +152,8 @@ func show_game_over_screen(final_wave: int):
 	score_label.text = "Waves Survived: " + str(final_wave - 1)
 	score_label.add_theme_font_size_override("font_size", 36)
 	score_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	score_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	score_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	score_label.add_theme_color_override("font_color", Color.YELLOW)
 	container.add_child(score_label)
 	
@@ -161,6 +165,7 @@ func show_game_over_screen(final_wave: int):
 	# Return to title button
 	var return_button = Button.new()
 	return_button.text = "Return to Title Screen"
+	return_button.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	return_button.custom_minimum_size = Vector2(300, 60)
 	return_button.add_theme_font_size_override("font_size", 24)
 	
