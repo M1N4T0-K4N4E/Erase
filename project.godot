@@ -77,7 +77,7 @@ Settings/Show_Tooltips=true
 config/name="ERASE Game Project"
 run/main_scene="uid://dk7s4hdgsy6um"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.png"
+config/icon="uid://c7gj0pr70vde8"
 
 [display]
 
