@@ -1,7 +1,8 @@
 extends Node2D
 
-# Preload the mob scene
-const MobScene = preload("res://characters/slime/mob_test.tscn")
+# Preload the mob scenes
+const SlimeMobScene = preload("res://characters/slime/mob_test.tscn")
+const MonsterScene = preload("res://characters/customized/monster.tscn")
 
 @onready var player = $player
 @onready var health_label = $UI/HealthContainer/HealthLabel
@@ -10,9 +11,10 @@ const MobScene = preload("res://characters/slime/mob_test.tscn")
 # Mob spawning settings
 var spawn_count = 5  # Number of mobs to spawn each wave
 var spawn_area_min = Vector2(100, 100)  # Minimum spawn coordinates
-var spawn_area_max = Vector2(1800, 980)  # Maximum spawn coordinates (screen boundaries)
+var spawn_area_max = Vector2(1700, 980)  # Maximum spawn coordinates (screen boundaries)
 var current_wave = 1
 var is_spawning_wave = false  # Prevent continuous spawning
+var monster_spawned_this_wave = false  # Track if monster was spawned this wave
 
 # UI elements
 var notice_screen: Control
@@ -47,8 +49,11 @@ func _process(_delta):
 	# Update health display continuously
 	update_health_display()
 	
-	# Check if all mobs are dead and we're not already spawning
-	if get_tree().get_nodes_in_group("mobs").size() == 0 and not is_spawning_wave:
+	# Check if all slimes are dead (monsters don't count for wave progression)
+	var slimes_alive = get_tree().get_nodes_in_group("mobs").size() - get_tree().get_nodes_in_group("monsters").size()
+	
+	# Spawn new wave when all slimes are dead (regardless of monsters)
+	if slimes_alive == 0 and not is_spawning_wave:
 		spawn_new_wave()
 
 func create_notice_screen():
@@ -86,6 +91,7 @@ func spawn_new_wave():
 		return
 		
 	is_spawning_wave = true
+	monster_spawned_this_wave = false  # Reset monster spawn flag for new wave
 	print("All mobs defeated! Spawning wave ", current_wave)
 	
 	# Show wave notice
@@ -110,7 +116,14 @@ func spawn_new_wave():
 	is_spawning_wave = false
 
 func spawn_mob_at_random_position():
-	var mob_instance = MobScene.instantiate()
+	# Always spawn a slime mob
+	var mob_instance = SlimeMobScene.instantiate()
+	
+	# 30% chance to spawn a monster instead, but only if none spawned this wave yet
+	var monster_chance = 0.3  # 30% chance
+	if not monster_spawned_this_wave and randf() < monster_chance:
+		mob_instance = MonsterScene.instantiate()
+		monster_spawned_this_wave = true  # Mark that monster was spawned this wave
 	
 	# Generate random position within spawn area
 	var random_x = randf_range(spawn_area_min.x, spawn_area_max.x)
