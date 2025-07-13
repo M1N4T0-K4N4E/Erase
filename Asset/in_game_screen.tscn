@@ -76,7 +76,7 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 24
 text = "Health: 10/10"
 
-[node name="Label" type="Label" parent="UI"]
+[node name="CurrentWaveLabel" type="Label" parent="UI"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

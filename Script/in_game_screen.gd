@@ -5,6 +5,7 @@ const MobScene = preload("res://characters/slime/mob_test.tscn")
 
 @onready var player = $player
 @onready var health_label = $UI/HealthContainer/HealthLabel
+@onready var current_wave_label = $UI/CurrentWaveLabel
 
 # Mob spawning settings
 var spawn_count = 5  # Number of mobs to spawn each wave
@@ -16,6 +17,7 @@ var is_spawning_wave = false  # Prevent continuous spawning
 # UI elements
 var notice_screen: Control
 var wave_label: Label
+
 
 func _ready():
 	# Connect to player health changes
@@ -36,6 +38,10 @@ func _on_button_pressed():
 func update_health_display():
 	if player and health_label:
 		health_label.text = "Health: %d/%d" % [player.current_health, player.max_health]
+		
+func update_wave_display():
+	# Update current wave status
+	current_wave_label.text = "Wave %d" % [current_wave]
 
 func _process(_delta):
 	# Update health display continuously
@@ -66,6 +72,7 @@ func create_notice_screen():
 	wave_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	notice_screen.add_child(wave_label)
 	
+	
 	# Add to UI layer
 	var ui_node = get_node("UI")
 	if ui_node:
@@ -95,6 +102,8 @@ func spawn_new_wave():
 	
 	current_wave += 1
 	print("Wave ", current_wave - 1, " spawned with ", mobs_to_spawn, " mobs")
+	
+	update_wave_display()
 	
 	# Reset the spawning flag
 	is_spawning_wave = false
