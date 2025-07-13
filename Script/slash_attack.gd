@@ -31,9 +31,9 @@ func set_direction(direction: Vector2):
 	rotation = direction.angle()
 
 func _on_body_entered(body):
-	# Check if the body is a mob (exclude player)
-	if body.is_in_group("mobs"):
-		# Deal damage to the mob
+	# Check if the body is a mob or monster (exclude player)
+	if body.is_in_group("mobs") or body.is_in_group("monsters"):
+		# Deal damage to the enemy
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
 		else:

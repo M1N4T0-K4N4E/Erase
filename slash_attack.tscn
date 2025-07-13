@@ -9,6 +9,22 @@ radius = 30.0
 _data = PackedByteArray("AAADAAUAAAABAAAAZAAAAGQAAAAmAQAAUklGRh4BAABXRUJQVlA4TBEBAAAvY8AYEBcw//M///MfgAe4tbW3bX4F9E7/PhxB4f9RoHfCPhxBcUyHh8+pchPRfzZu2wZSJsEdhLtf2K+6G+YWiQUx5QLJBeJIdeIxiU3HiLli9gE12oLrCmW/8tB8kI11yCD7YHTJ2c6f+YL6Fj1SupEiQxXZHKoxg/+nDl8gdDZr+2e4G2aBhBNTMskUpC6IxyQ2HfXAdYfE7IZ1M9ZtXkd1nD2o4+yi1uVgwIi4cB3qhjVQJ9YNa164ridmo+alUt3cUQ8N665pYl28ZXOdmh1/ZXCTBzd5cJOHYvJQTB1uzNTBmLjWhcqlFYQfdkf4oT7klwZm9GnloatYvsrEo8wmXcW+QOhsUmbSsQf7/jMA")
 size_override = Vector2(100, 100)
 
+[sub_resource type="Animation" id="Animation_78b5u"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.225),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="Animation" id="Animation_1d7k8"]
 resource_name = "slash"
 length = 0.3
@@ -35,22 +51,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0.8), Color(1, 0.8, 0.8, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_78b5u"]
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.075, 0.15, 0.225),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1k7j8"]
