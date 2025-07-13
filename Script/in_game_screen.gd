@@ -50,7 +50,11 @@ func _process(_delta):
 	update_health_display()
 	
 	# Check if all slimes are dead (monsters don't count for wave progression)
-	var slimes_alive = get_tree().get_nodes_in_group("mobs").size() - get_tree().get_nodes_in_group("monsters").size()
+	var slimes_alive = 0
+	for mob in get_tree().get_nodes_in_group("mobs"):
+		# Only count slimes (check if they have a "Slime" node)
+		if mob.has_node("Slime"):
+			slimes_alive += 1
 	
 	# Spawn new wave when all slimes are dead (regardless of monsters)
 	if slimes_alive == 0 and not is_spawning_wave:
@@ -97,7 +101,7 @@ func spawn_new_wave():
 	show_wave_notice()
 	
 	# Wait a moment, then spawn mobs
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	
 	# Increase difficulty by spawning more mobs each wave
 	var mobs_to_spawn = spawn_count + (current_wave - 1) * 2  # +2 mobs per wave
@@ -119,7 +123,7 @@ func spawn_mob_at_random_position():
 	var mob_instance = SlimeMobScene.instantiate()
 	
 	# 30% chance to spawn a monster instead, but only if none spawned this wave yet
-	var monster_chance = 0.3  # 30% chance
+	var monster_chance = 0.05
 	if not monster_spawned_this_wave and randf() < monster_chance:
 		mob_instance = MonsterScene.instantiate()
 		monster_spawned_this_wave = true  # Mark that monster was spawned this wave
