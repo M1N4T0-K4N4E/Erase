@@ -64,6 +64,7 @@ func create_notice_screen():
 	# Create a UI overlay for wave notifications
 	notice_screen = Control.new()
 	notice_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	#notice_screen.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	notice_screen.visible = false
 	
 	# Background panel
@@ -150,7 +151,8 @@ func spawn_mob_at_random_position():
 
 func show_wave_notice():
 	if notice_screen and wave_label:
-		wave_label.text = "Wave " + str(current_wave+1) + " Incoming!"
+		wave_label.text = "Wave %d Incoming!" % [current_wave + 1]
+		
 		notice_screen.visible = true
 		
 		# Hide notice after 2 seconds
