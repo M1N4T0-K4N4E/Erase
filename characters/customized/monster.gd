@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var player
-var health = 10
+var health = 100
 
 func _ready() -> void:
 	player = get_node("../player")
